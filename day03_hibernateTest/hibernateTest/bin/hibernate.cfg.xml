@@ -54,5 +54,7 @@
 		填写src之后的路径
 	-->
 	<mapping resource="cn/px/bean/User.hbm.xml" />
+	<mapping resource="cn/px/bean/Classes.hbm.xml" />
+	<mapping resource="cn/px/bean/Student.hbm.xml" />
 </session-factory>
 </hibernate-configuration>

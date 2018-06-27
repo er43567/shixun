@@ -6,11 +6,13 @@
     <script type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-1.7.2.min.js"></script>
     <script type="text/javascript">
        $(function(){
-    	   alert($("username"));
+    	   
     	   $("username").keydown(function(){
     		    alert(event.keyCode);
+    		    alert($("username"));
     	   });   
        })
+       
     </script>
 	</head>
   <body>

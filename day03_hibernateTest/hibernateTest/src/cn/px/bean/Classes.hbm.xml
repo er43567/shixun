@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <!-- ORM元数据  表对象关系映射文件 
+    	package : 配置该配置文件中类所在的包.  -->
+ <hibernate-mapping package="cn.px.bean" >
+ 	<class name="Classes" table="t_classes"  >
+ 	    <!-- id為主鍵 -->
+		<id name="id" column="id" length="255" >
+			<generator class="uuid"></generator>
+		</id> 	
+		<property name="className" column="className"/>
+		<set name="students" >
+		   <key column="pid"></key>
+		   <one-to-many class="cn.px.bean.Student"/>
+		</set>
+    </class>
+ </hibernate-mapping>

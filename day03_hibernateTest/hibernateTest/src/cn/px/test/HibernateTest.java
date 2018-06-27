@@ -2,11 +2,11 @@ package cn.px.test;
 
 import org.hibernate.Session;
 import org.junit.Test;
-
 import cn.px.bean.User;
 import cn.px.utils.HibernateUtils;
-
-
+/*
+  添加,删除是需要放置在事务中,才会执行对数据库的操作
+ */
 public class HibernateTest {
      @Test
 	 public void test01(){
@@ -14,8 +14,7 @@ public class HibernateTest {
 	      System.out.println(session);
 	      HibernateUtils.closeSession(session);
      }
-
-
+     //实体类的保存
      @Test
      public void test02(){
     	  Session session = HibernateUtils.getSession();
