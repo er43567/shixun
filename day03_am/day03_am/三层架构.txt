@@ -1,0 +1,60 @@
+jsp:
+
+<table>
+ <tr><td>姓名</td><td></td></tr> 
+ <s:foreach value="userlist" var="">
+</table>
+
+userList(aa,bb,cc) -->(第一次循环的时候,把aa给var),
+以为aa是一个对象
+
+<s:property value="#aa.某个属性"
+
+
+for(int i=0;i<10;i++){
+
+}
+(mvc设计模式,三层架构)
+cn.px.web.action 
+   UserAction
+   
+   public String listUser(){
+        sql where 1000000
+        List<User> list = service.listUser();
+		//传递给页面,可以选择两种方案,request.setAttribute(),
+		//struts 特有的功能,valuestack
+		//把查询出来的list数据放入到valuestack 
+		valuestack.put("userlist");
+		return "";
+		
+   }
+   
+   
+cn.px.service
+  
+  public List<User> ListUser(){ 
+        List<User> list = dao.listUser();
+		return list;
+		//银行取钱
+		(1) 输入密码
+		(2) 取钱-> 判断 (2000,1000)
+		(3) if(1000<20000){
+		     数据库  20000-1000 //事务处理
+		 }
+  }
+  
+cn.px.dao
+  public List<User> listUser(){
+      //jdbc操作
+	  List<User> list = new User(); 
+	 
+	  while(rs.next()){
+	    User user = new User();
+		user.setUsername(rs.getString("username"));
+		list.add(user);
+	  }
+	   return list;
+  }
+  
+  
+  
