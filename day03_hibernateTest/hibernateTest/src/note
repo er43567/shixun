@@ -1,0 +1,20 @@
+
+开发一个基本的hibernate的流程
+
+(1) 新建一个文件夹lib,导入相关依赖的jar包
+
+(2) 创建实体类 
+     cn.px.bean 
+	          -User implmenets Serializable 
+			  (id,username,password,并且生成相应的setter,getter方法)
+			  
+(3) 在相应的实体类所在包下,创建xxx.hbm.xml配置文件
+
+(4) 在src下创建配文件hibernate.cfg.xml配置文件
+
+(5) 在src下添加log4j.properties (打印相对应的系统)
+
+(6) 增加一个工具包, cn.px.utils
+     开发一个工具类 (HibernateUtils,封装session的创建,session可以理解为
+	 jdbc的connection)
+(7)  编写对实体User的crud的测试类
